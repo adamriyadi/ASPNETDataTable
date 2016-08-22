@@ -7,13 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Web.Http;
+using System.Linq;
+using System.Linq.Dynamic;
 
 namespace ASPNETDataTable.Demo.Controllers.Api
 {
     [RoutePrefix("api")]
     public class OrdersController : BaseApiController
     {
-        private bool disposed;
         private OrdersService service;
 
         public OrdersController(OrdersService _service)
@@ -30,6 +31,7 @@ namespace ASPNETDataTable.Demo.Controllers.Api
             var customer_orders = service.GetCustomerOrders();
 
             var dataTable = new ASPNetDataTable<CustomerOrdersDto>(dtRequest, customer_orders);
+            //dataTable.BuildDataTable(doSearch, doSort);
             dataTable.BuildDataTable();
 
             return dataTable.GetResponse();
