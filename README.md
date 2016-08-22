@@ -1,8 +1,9 @@
 # ASPNETDataTable
-DataTable server side library for ASP.NET
+jqery DataTable (http://www.datatables.net) server side library for ASP.NET
  
 ### Dependency :
-	System.Linq.Dynamic 
+	System.Linq.Dynamic (>= 1.0.6)
+	jquery.dataTables (>= 1.10)
 
 ### Sample :
 ``` cs
